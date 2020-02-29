@@ -1,0 +1,105 @@
+# -------------------------------------------------------------------------- #
+# Name: David Tassoni                                                        #
+# Date:                                                                      #
+# Assignment: Lab 2                                                          #
+#                                                                            #
+# Description: Assembly program that counts in hex after key 1 is pressed.   #
+#              The count is displayed on HEX0, and it increments or          #
+#              decrements if Key 1 was pressed, then released. The direction #
+#              of count depends on if switch 0 is high or low.               #
+# BONUS: The Program loops in both directions.                               #
+# -------------------------------------------------------------------------- #  
+
+.data
+.text
+
+#define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+#define constants
+.equ Switches,     0x11000 /* find the base address of Switches in the system.h file */
+.equ HEX0,         0x11020 /* find the base address of HEX0 in the system.h file     */
+.equ Push_Buttons, 0x11010 /* find base address of Push_Buttons in the system.h file */
+.equ HEX_MIN, 64  /* This will output 0 to the hex display  */
+.equ HEX_MAX, 14  /* This will output F to the hex display  */
+
+#Define the main program
+.global main
+main:
+# The main first sets 3 pointers for the Switches, HEX0, and the pushbuttons
+# The array of the hex numbers is loaded into a register, and I also loaded some registers
+# with numbers used, 
+	movia r2, Switches     /* Register r2 is a pointer to Switches */
+	movia r3, HEX0         /* Register r3 is a pointer to HEX0 */
+	movia r4, Push_Buttons /* Register r4 is a pointer to Push_Buttons */
+	movia r5, HEX_Numbers  /* Load r5 w/ HEX_Numbers array */
+	movia r6, 1            /* Load r6 w/ Logic High (1) for SW0 */
+	movia r7, 15           /* Load r7 w/ Logic High (1111) for KEY1 */
+	movia r8, HEX_MIN      /* Load r8 w/ '0' */
+	movia r9, HEX_MAX      /* Load r9 w/ 'F' */
+	movia r13, 13          /* Load r13 w/ "1111" */
+
+# Note of registers used in addition to the ones above:
+# r10 for the HEX_Numbers array
+# r11 for the Switches
+# r12 for the Push_Buttons
+# 
+#
+
+loop:
+# The loop, which runs the whole time
+	ldbio r11, 0(r2)   /* Load r11 w/ Switches value from r2 */
+	andi  r11, r11 , 1 /* Bitmask (ANDing) of SW0(0001) */
+	
+	ldbio r10, 0(r5) /* Load r10 w/ HEX_Numbers array value(s) from r5 */
+	stbio r10, 0(r3) /* Store r10 w/ HEX_Numbers array value(s) to r3 */
+	
+	ldbio r12, 0(r4)   /* Load r12 w/ Push_Buttons value */
+	ori   r12, r12, 13 /* Bitmask (ORing) of KEY1 (11?1) */
+	beq   r12, r13, pushbutton_check /* Branch to pushbutton_check if KEY1 is Logic 0 */
+	
+	br loop /*go back to beginning of 'loop'*/
+
+pushbutton_check:
+# This subroutine checks to see the status of the pushbutton, so that the program knows whether to 
+# actually decrement or increment
+	beq r12, r7, count_direction /* Branch to count_direction if KEY1 is Logic 1 */
+	ldbio r12, 0(r4)             /* Load r12 w/ Push_Buttons value */
+	ori   r12, r12, 13           /* Bitmask (ORing) of KEY1 (11?1) */
+	br pushbutton_check          /* Branch to "pushbutton_check" if key is not released */
+
+count_direction:
+# This subroutine checks the state of SW0 so the program can then branch to either decrement or increment 
+	beq r11, r0, decrement /* branch to 'decrement' if SW0 is low  */
+    beq r11, r6, increment /* branch to 'increment' if SW0 is high */
+	
+increment:
+# Increments the array by one to display the next number
+	beq r10, r9, up_count_reset /* branch to 'up_count_reset' if SSD is on F */
+    addi r5, r5, 1 /* increment array */
+    br loop /* go back to beginning of 'loop' */
+
+decrement:
+# Decrements the array buy one to display the next number
+	beq r10, r8, down_count_reset /* branch to 'down_count_reset' if SSD is on 0 */
+    subi r5, r5, 1 /* decrement array */
+    br loop /* go back to beginning of 'loop' */
+
+up_count_reset:
+# When this is entered, the array resets to index 0, which satisifes the bonus requirement
+   subi r5, r5, 15             /* Reset of HEX_Numbers array to index 0 */
+   stbio r10, 0(r3)            /* Store r10 w/ HEX_Numbers array value(s) to r3 */
+   br loop /* go back to beginning of 'loop' */
+
+down_count_reset:
+# When this is entered, the array resets to index 15, which satisifes the bonus requirement
+   stbio r10, 0(r3) /* Store r10 w/ HEX_Numbers array value(s) to r3 */
+   addi r5, r5, 15  /* Reset of HEX_Numbers array to index 15 */
+   br loop /* go back to beginning of 'loop' */
+
+HEX_Numbers:
+	.byte 64, 121, 36, 48, 25, 18, 2, 120, 0, 24, 8, 3, 70, 33, 6, 14 /* Hex Numbers 0-F */

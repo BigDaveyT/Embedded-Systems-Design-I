@@ -1,0 +1,109 @@
+/*
+ * part_1.c
+ *
+ *  Created on: Feb 7, 2020
+ *      Author: dxt1757
+ */
+
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "altera_avalon_timer_regs.h"
+#include "altera_avalon_timer.h"
+
+// create standard embedded type definitions
+typedef signed char    sint8 ; // signed 8 bit values
+typedef unsigned char  uint8 ; // unsigned 8 bit values
+typedef signed short   sint16; // signed 16 bit values
+typedef unsigned short uint16; // unsigned 16 bit values
+typedef signed long    sint32; // signed 32 bit values
+typedef unsigned long  uint32; // unsigned 32 bit values
+typedef float          real32; // 32 bit real values
+
+uint8* Hex_Pointer             = (uint8*)HEX0_BASE;
+uint8* Switches_Pointer        = (uint8*)SWITCHES_BASE;
+uint8* Pushbuttons_Pointer     = (uint8*)PUSHBUTTONS_BASE;
+uint8* LEDs_Pointer            = (uint8*)LEDS_BASE;
+uint8* Pushbuttons_Edge_Capture = (uint8*)PUSHBUTTONS_CAPTURE;
+
+uint8 switches;
+uint8 hexNumbers[] = 
+{
+	0x40, // 0
+	0x79, // 1
+	0x24, // 2
+	0x30, // 3
+	0x19, // 4
+	0x12, // 5
+	0x02, // 6
+	0x78, // 7
+	0x00, // 8
+	0x18, // 9
+	0x08, // A
+	0x03, // b
+	0x46, // c
+	0x21, // d
+	0x06, // E
+	0x0E  // F
+	};    // End of Array
+	
+	
+int readPushbuttons()
+{
+	uint32 Pushbuttons_value;
+	Pushbuttons_value = *Pushbuttons_Pointer;
+	return Pushbuttons_value;
+}
+
+int checkPushbuttonsRelease()
+{
+	uint32 Pushbuttons_Release;
+	// int i;
+	*Pushbuttons_Edge_Capture = 0; // make sure it is 0
+	
+	// Pushbuttons_Release = *Pushbuttons_Edge_Capture;
+
+	if((Pushbuttons_Release = 0b1101)) // Button is pushed
+	{
+		while(1)
+		{
+			Pushbuttons_Release = 0b1111;
+			break;
+		}
+	}
+	return Pushbuttons_Release;
+}
+	
+int main(void)
+{
+	*Hex_Pointer = hexNumbers[0];
+	uint8 count = 0;
+	static uint8 hex_max = 16;
+	static uint8 hex_min = 0;
+	while(1)
+	{
+		/* readPushbuttons(); */
+		// checkPushbuttonsRelease();
+		if((switches = 0b00000001))
+		{
+			checkPushbuttonsRelease();
+			*Hex_Pointer = hexNumbers[count];
+			count++;
+		}
+		if((switches = 0b00000000))
+		{
+			checkPushbuttonsRelease();
+			*Hex_Pointer = hexNumbers[count];
+			count--;
+		}
+		if(count == hex_max)
+		{
+			count = hex_min;
+		}
+		if(count == hex_min)
+		{
+			count = hex_max;
+		}
+	}
+	return(0);
+}
