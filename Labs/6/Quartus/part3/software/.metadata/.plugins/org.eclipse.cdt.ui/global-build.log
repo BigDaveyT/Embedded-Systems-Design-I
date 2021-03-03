@@ -1,0 +1,47 @@
+14:38:40 **** Build of configuration Nios II for project LAB6_Part4_APP ****
+make all 
+Info: Building ../LAB6_Part4_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB6_Part4_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part4.c to obj/default/Lab6_Part4.o
+nios2-elf-gcc -xc -MP -MMD -c -I../LAB6_Part4_APP_bsp//HAL/inc -I../LAB6_Part4_APP_bsp/ -I../LAB6_Part4_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part4.o Lab6_Part4.c
+Lab6_Part4.c: In function 'RAM32bit':
+Lab6_Part4.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+             printf("\n\nERROR: Address: 0x%u Read: 0x%u Expected: 0x%u", i, *(startaddress + i), testData);
+                    ^
+Lab6_Part4.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part4.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part4.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part4.c: In function 'Pushbutton_isr':
+Lab6_Part4.c:116:16: warning: pointer targets in passing argument 1 of 'printf' differ in signedness [-Wpointer-sign]
+         printf((uint8*)"RAM TEST DONE", 13); // message printed to JTAG UART upon completion
+                ^
+In file included from c:\intelfpga_lite\18.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:29:0,
+                 from Lab6_Part4.c:2:
+c:\intelfpga_lite\18.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:215:5: note: expected 'const char * restrict' but argument is of type 'uint8 * {aka unsigned char *}'
+ int _EXFUN(printf, (const char *__restrict, ...)
+     ^
+Lab6_Part4.c:116:24: warning: too many arguments for format [-Wformat-extra-args]
+         printf((uint8*)"RAM TEST DONE", 13); // message printed to JTAG UART upon completion
+                        ^
+Lab6_Part4.c:116:24: warning: too many arguments for format [-Wformat-extra-args]
+Info: Linking LAB6_Part4_APP.elf
+nios2-elf-g++  -T'../LAB6_Part4_APP_bsp//linker.x' -msys-crt0='../LAB6_Part4_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../LAB6_Part4_APP_bsp/  -msmallc  -Wl,-Map=LAB6_Part4_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o LAB6_Part4_APP.elf obj/default/Lab6_Part4.o -lm -msys-lib=m
+nios2-elf-insert LAB6_Part4_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1586885969 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "G:/Documents/School/6th_Year/ESD/Labs/6/Quartus/part3" --jdi ../..//output_files/part1.jdi --sopcinfo G:/Documents/School/6th_Year/ESD/Labs/6/Quartus/part3/software/LAB6_Part4_APP_bsp/../../nios_system.sopcinfo
+Info: (LAB6_Part4_APP.elf) 10 KBytes program size (code + initialized data).
+Info:                      5384 Bytes free for stack + heap.
+Info: Creating LAB6_Part4_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source LAB6_Part4_APP.elf >LAB6_Part4_APP.objdump
+[LAB6_Part4_APP build complete]
+14:39:37 **** Build of configuration Nios II for project LAB6_Part4_APP ****
+make all 
+Info: Building ../LAB6_Part4_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB6_Part4_APP_bsp/
+[BSP build complete]
+[LAB6_Part4_APP build complete]
+14:39:38 **** Incremental Build of configuration Nios II for project LAB6_Part4_APP ****
+make all 
+Info: Building ../LAB6_Part4_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB6_Part4_APP_bsp/
+[BSP build complete]
+[LAB6_Part4_APP build complete]

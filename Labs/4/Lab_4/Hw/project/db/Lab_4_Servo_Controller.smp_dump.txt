@@ -1,0 +1,7 @@
+
+State Machine - |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|current_state
+Name current_state.Wait_2 current_state.Sweep_Left current_state.Wait_1 current_state.Sweep_Right 
+current_state.Sweep_Right 0 0 0 0 
+current_state.Wait_1 0 0 1 1 
+current_state.Sweep_Left 0 1 0 1 
+current_state.Wait_2 1 0 0 1 

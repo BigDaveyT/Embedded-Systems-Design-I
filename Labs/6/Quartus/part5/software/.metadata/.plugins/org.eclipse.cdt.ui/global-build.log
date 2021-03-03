@@ -1,0 +1,41 @@
+15:21:44 **** Build of configuration Nios II for project Lab6_Part5_APP ****
+make all 
+Info: Building ../Lab6_Part5_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part5_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part5.c to obj/default/Lab6_Part5.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part5_APP_bsp//HAL/inc -I../Lab6_Part5_APP_bsp/ -I../Lab6_Part5_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part5.o Lab6_Part5.c
+Lab6_Part5.c: In function 'RAM32bit':
+Lab6_Part5.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+             printf("\n\nERROR: Address: 0x%u Read: 0x%u Expected: 0x%u", i, *(startaddress + i), testData);
+                    ^
+Lab6_Part5.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part5.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part5.c:95:20: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part5.c: In function 'Pushbutton_isr':
+Lab6_Part5.c:112:5: error: invalid operands to binary * (have 'int' and 'volatile int *')
+     *(Key1Ptr + 3) = key_value; // clear the pushbutton interrupt
+     ^
+Lab6_Part5.c:118:16: warning: pointer targets in passing argument 1 of 'printf' differ in signedness [-Wpointer-sign]
+         printf((uint8*)"RAM TEST DONE", 13); // message printed to JTAG UART upon completion
+                ^
+In file included from c:\intelfpga_lite\18.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:29:0,
+                 from Lab6_Part5.c:2:
+c:\intelfpga_lite\18.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:215:5: note: expected 'const char * restrict' but argument is of type 'uint8 * {aka unsigned char *}'
+ int _EXFUN(printf, (const char *__restrict, ...)
+     ^
+Lab6_Part5.c:118:24: warning: too many arguments for format [-Wformat-extra-args]
+         printf((uint8*)"RAM TEST DONE", 13); // message printed to JTAG UART upon completion
+                        ^
+Lab6_Part5.c:118:24: warning: too many arguments for format [-Wformat-extra-args]
+Lab6_Part5.c:119:9: warning: implicit declaration of function 'testDone' [-Wimplicit-function-declaration]
+         testDone();
+         ^
+Lab6_Part5.c: At top level:
+Lab6_Part5.c:124:6: warning: conflicting types for 'testDone'
+ void testDone(void)
+      ^
+Lab6_Part5.c:119:9: note: previous implicit declaration of 'testDone' was here
+         testDone();
+         ^
+make: *** [obj/default/Lab6_Part5.o] Error 1

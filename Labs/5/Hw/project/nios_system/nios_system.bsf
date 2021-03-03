@@ -1,0 +1,158 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 512 504)
+	(text "nios_system" (rect 219 -1 270 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 488 20 500)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 224 72)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "pushbuttons_export[3..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "pushbuttons_export[3..0]" (rect 4 341 148 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 224 352)(line_width 3))
+	)
+	(port
+		(pt 0 392)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 381 82 392)(font "Arial" (font_size 8)))
+		(line (pt 0 392)(pt 224 392)(line_width 1))
+	)
+	(port
+		(pt 0 472)
+		(input)
+		(text "switches_export[7..0]" (rect 0 0 83 12)(font "Arial" (font_size 8)))
+		(text "switches_export[7..0]" (rect 4 461 130 472)(font "Arial" (font_size 8)))
+		(line (pt 0 472)(pt 224 472)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "hex0_export[6..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "hex0_export[6..0]" (rect 4 101 106 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 224 112)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "hex1_export[6..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "hex1_export[6..0]" (rect 4 141 106 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 224 152)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "hex2_export[6..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "hex2_export[6..0]" (rect 4 181 106 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 224 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "hex3_export[6..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "hex3_export[6..0]" (rect 4 221 106 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 224 232)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(output)
+		(text "hex4_export[6..0]" (rect 0 0 70 12)(font "Arial" (font_size 8)))
+		(text "hex4_export[6..0]" (rect 4 261 106 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 224 272)(line_width 3))
+	)
+	(port
+		(pt 0 312)
+		(output)
+		(text "hex5_export[6..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "hex5_export[6..0]" (rect 4 301 106 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 224 312)(line_width 3))
+	)
+	(port
+		(pt 0 432)
+		(output)
+		(text "servo_controller_0_conduit_end_wave_out" (rect 0 0 173 12)(font "Arial" (font_size 8)))
+		(text "servo_controller_0_conduit_end_wave_out" (rect 4 421 238 432)(font "Arial" (font_size 8)))
+		(line (pt 0 432)(pt 224 432)(line_width 1))
+	)
+	(drawing
+		(text "clk" (rect 209 43 436 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 229 67 476 144)(font "Arial" (color 0 0 0)))
+		(text "hex0" (rect 198 83 420 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 107 494 224)(font "Arial" (color 0 0 0)))
+		(text "hex1" (rect 200 123 424 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 147 494 304)(font "Arial" (color 0 0 0)))
+		(text "hex2" (rect 198 163 420 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 187 494 384)(font "Arial" (color 0 0 0)))
+		(text "hex3" (rect 198 203 420 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 227 494 464)(font "Arial" (color 0 0 0)))
+		(text "hex4" (rect 198 243 420 499)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 267 494 544)(font "Arial" (color 0 0 0)))
+		(text "hex5" (rect 198 283 420 579)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 307 494 624)(font "Arial" (color 0 0 0)))
+		(text "pushbuttons" (rect 154 323 374 659)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 347 494 704)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 195 363 420 739)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 229 387 500 784)(font "Arial" (color 0 0 0)))
+		(text "servo_controller_0_conduit_end" (rect 38 403 256 819)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "wave_out" (rect 229 427 506 864)(font "Arial" (color 0 0 0)))
+		(text "switches" (rect 174 443 396 899)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 467 494 944)(font "Arial" (color 0 0 0)))
+		(text " nios_system " (rect 454 488 986 986)(font "Arial" ))
+		(line (pt 224 32)(pt 288 32)(line_width 1))
+		(line (pt 288 32)(pt 288 488)(line_width 1))
+		(line (pt 224 488)(pt 288 488)(line_width 1))
+		(line (pt 224 32)(pt 224 488)(line_width 1))
+		(line (pt 225 52)(pt 225 76)(line_width 1))
+		(line (pt 226 52)(pt 226 76)(line_width 1))
+		(line (pt 225 92)(pt 225 116)(line_width 1))
+		(line (pt 226 92)(pt 226 116)(line_width 1))
+		(line (pt 225 132)(pt 225 156)(line_width 1))
+		(line (pt 226 132)(pt 226 156)(line_width 1))
+		(line (pt 225 172)(pt 225 196)(line_width 1))
+		(line (pt 226 172)(pt 226 196)(line_width 1))
+		(line (pt 225 212)(pt 225 236)(line_width 1))
+		(line (pt 226 212)(pt 226 236)(line_width 1))
+		(line (pt 225 252)(pt 225 276)(line_width 1))
+		(line (pt 226 252)(pt 226 276)(line_width 1))
+		(line (pt 225 292)(pt 225 316)(line_width 1))
+		(line (pt 226 292)(pt 226 316)(line_width 1))
+		(line (pt 225 332)(pt 225 356)(line_width 1))
+		(line (pt 226 332)(pt 226 356)(line_width 1))
+		(line (pt 225 372)(pt 225 396)(line_width 1))
+		(line (pt 226 372)(pt 226 396)(line_width 1))
+		(line (pt 225 412)(pt 225 436)(line_width 1))
+		(line (pt 226 412)(pt 226 436)(line_width 1))
+		(line (pt 225 452)(pt 225 476)(line_width 1))
+		(line (pt 226 452)(pt 226 476)(line_width 1))
+		(line (pt 0 0)(pt 512 0)(line_width 1))
+		(line (pt 512 0)(pt 512 504)(line_width 1))
+		(line (pt 0 504)(pt 512 504)(line_width 1))
+		(line (pt 0 0)(pt 0 504)(line_width 1))
+	)
+)

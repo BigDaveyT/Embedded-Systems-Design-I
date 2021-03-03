@@ -1,0 +1,41 @@
+12:45:38 **** Build of configuration Nios II for project lab5 ****
+make all 
+Info: Building ../lab5_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab5_bsp/
+[BSP build complete]
+Info: Linking lab5.elf
+nios2-elf-g++  -T'../lab5_bsp//linker.x' -msys-crt0='../lab5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab5_bsp/   -Wl,-Map=lab5.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab5.elf  -lm -msys-lib=m
+../lab5_bsp/\libhal_bsp.a(alt_main.o): In function `alt_main':
+G:\Documents\School\6th_Year\ESD\Labs\5\Hw\project\software\lab5_bsp/HAL/src/alt_main.c:154: undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [lab5.elf] Error 1
+12:45:46 **** Incremental Build of configuration Nios II for project lab5 ****
+make all 
+Info: Building ../lab5_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab5_bsp/
+[BSP build complete]
+Info: Compiling lab_5.c to obj/default/lab_5.o
+nios2-elf-gcc -xc -MP -MMD -c -I../lab5_bsp//HAL/inc -I../lab5_bsp/ -I../lab5_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab_5.o lab_5.c
+Info: Linking lab5.elf
+nios2-elf-g++  -T'../lab5_bsp//linker.x' -msys-crt0='../lab5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab5_bsp/   -Wl,-Map=lab5.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab5.elf obj/default/lab_5.o -lm -msys-lib=m
+nios2-elf-insert lab5.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 5 --sidp 0x11090 --timestamp 1587598671 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "G:/Documents/School/6th_Year/ESD/Labs/5/Hw/project" --jdi G:/Documents/School/6th_Year/ESD/Labs/5/Hw/project/software/lab5_bsp/../../Lab_5_Servo_Controller.jdi --sopcinfo G:/Documents/School/6th_Year/ESD/Labs/5/Hw/project/software/lab5_bsp/../../nios_system.sopcinfo
+Info: (lab5.elf) 24 KBytes program size (code + initialized data).
+Info:            1996 Bytes free for stack + heap.
+Info: Creating lab5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source lab5.elf >lab5.objdump
+[lab5 build complete]
+12:45:47 **** Incremental Build of configuration Nios II for project lab5_bsp ****
+make all 
+[BSP build complete]
+12:45:57 **** Build of configuration Nios II for project lab5 ****
+make all 
+Info: Building ../lab5_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab5_bsp/
+[BSP build complete]
+[lab5 build complete]
+12:45:58 **** Incremental Build of configuration Nios II for project lab5 ****
+make all 
+Info: Building ../lab5_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab5_bsp/
+[BSP build complete]
+[lab5 build complete]

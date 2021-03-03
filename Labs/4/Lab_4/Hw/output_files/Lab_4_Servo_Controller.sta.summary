@@ -1,0 +1,133 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -7.285
+TNS   : -515.896
+
+Type  : Slow 1100mV 85C Model Setup 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : -4.281
+TNS   : -4.281
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 1.755
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.757
+TNS   : -84.386
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.601
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -76.900
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 0.087
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -7.006
+TNS   : -507.584
+
+Type  : Slow 1100mV 0C Model Setup 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : -4.509
+TNS   : -4.509
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 1.882
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.687
+TNS   : -76.361
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.568
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -81.903
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 0.103
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -4.591
+TNS   : -249.667
+
+Type  : Fast 1100mV 85C Model Setup 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : -1.983
+TNS   : -1.983
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 1.047
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.090
+TNS   : -4.667
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.096
+TNS   : -13.397
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -3.923
+TNS   : -213.467
+
+Type  : Fast 1100mV 0C Model Setup 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : -1.980
+TNS   : -1.980
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 1.145
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.315
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.091
+TNS   : -12.978
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]'
+Slack : 0.226
+TNS   : 0.000
+
+------------------------------------------------------------

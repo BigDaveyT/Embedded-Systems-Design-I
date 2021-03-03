@@ -1,0 +1,614 @@
+Analysis & Synthesis report for Lab_4_Servo_Controller
+Sat Mar 07 22:47:35 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|current_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "Lab_4_Servo_Controller:Servo_Controller"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Mar 07 22:47:35 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Lab_4_Servo_Controller                      ;
+; Top-level Entity Name           ; Lab_4_Servo_Controller_Top                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 99                                          ;
+; Total pins                      ; 51                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                         ;
++---------------------------------------------------------------------------------+----------------------------+------------------------+
+; Option                                                                          ; Setting                    ; Default Value          ;
++---------------------------------------------------------------------------------+----------------------------+------------------------+
+; Device                                                                          ; 5CSEMA5F31C6               ;                        ;
+; Top-level entity name                                                           ; Lab_4_Servo_Controller_Top ; Lab_4_Servo_Controller ;
+; Family name                                                                     ; Cyclone V                  ; Cyclone V              ;
+; Use smart compilation                                                           ; Off                        ; Off                    ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                         ; On                     ;
+; Enable compact report table                                                     ; Off                        ; Off                    ;
+; Restructure Multiplexers                                                        ; Auto                       ; Auto                   ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                        ; Off                    ;
+; Create Debugging Nodes for IP Cores                                             ; Off                        ; Off                    ;
+; Preserve fewer node names                                                       ; On                         ; On                     ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                     ; Enable                 ;
+; Verilog Version                                                                 ; Verilog_2001               ; Verilog_2001           ;
+; VHDL Version                                                                    ; VHDL_1993                  ; VHDL_1993              ;
+; State Machine Processing                                                        ; Auto                       ; Auto                   ;
+; Safe State Machine                                                              ; Off                        ; Off                    ;
+; Extract Verilog State Machines                                                  ; On                         ; On                     ;
+; Extract VHDL State Machines                                                     ; On                         ; On                     ;
+; Ignore Verilog initial constructs                                               ; Off                        ; Off                    ;
+; Iteration limit for constant Verilog loops                                      ; 5000                       ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                        ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                         ; On                     ;
+; Infer RAMs from Raw Logic                                                       ; On                         ; On                     ;
+; Parallel Synthesis                                                              ; On                         ; On                     ;
+; DSP Block Balancing                                                             ; Auto                       ; Auto                   ;
+; NOT Gate Push-Back                                                              ; On                         ; On                     ;
+; Power-Up Don't Care                                                             ; On                         ; On                     ;
+; Remove Redundant Logic Cells                                                    ; Off                        ; Off                    ;
+; Remove Duplicate Registers                                                      ; On                         ; On                     ;
+; Ignore CARRY Buffers                                                            ; Off                        ; Off                    ;
+; Ignore CASCADE Buffers                                                          ; Off                        ; Off                    ;
+; Ignore GLOBAL Buffers                                                           ; Off                        ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                        ; Off                    ;
+; Ignore LCELL Buffers                                                            ; Off                        ; Off                    ;
+; Ignore SOFT Buffers                                                             ; On                         ; On                     ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                        ; Off                    ;
+; Optimization Technique                                                          ; Balanced                   ; Balanced               ;
+; Carry Chain Length                                                              ; 70                         ; 70                     ;
+; Auto Carry Chains                                                               ; On                         ; On                     ;
+; Auto Open-Drain Pins                                                            ; On                         ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                        ; Off                    ;
+; Auto ROM Replacement                                                            ; On                         ; On                     ;
+; Auto RAM Replacement                                                            ; On                         ; On                     ;
+; Auto DSP Block Replacement                                                      ; On                         ; On                     ;
+; Auto Shift Register Replacement                                                 ; Auto                       ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                       ; Auto                   ;
+; Auto Clock Enable Replacement                                                   ; On                         ; On                     ;
+; Strict RAM Replacement                                                          ; Off                        ; Off                    ;
+; Allow Synchronous Control Signals                                               ; On                         ; On                     ;
+; Force Use of Synchronous Clear Signals                                          ; Off                        ; Off                    ;
+; Auto Resource Sharing                                                           ; Off                        ; Off                    ;
+; Allow Any RAM Size For Recognition                                              ; Off                        ; Off                    ;
+; Allow Any ROM Size For Recognition                                              ; Off                        ; Off                    ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                        ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                         ; On                     ;
+; Ignore translate_off and synthesis_off directives                               ; Off                        ; Off                    ;
+; Timing-Driven Synthesis                                                         ; On                         ; On                     ;
+; Report Parameter Settings                                                       ; On                         ; On                     ;
+; Report Source Assignments                                                       ; On                         ; On                     ;
+; Report Connectivity Checks                                                      ; On                         ; On                     ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                        ; Off                    ;
+; Synchronization Register Chain Length                                           ; 3                          ; 3                      ;
+; Power Optimization During Synthesis                                             ; Normal compilation         ; Normal compilation     ;
+; HDL message level                                                               ; Level2                     ; Level2                 ;
+; Suppress Register Optimization Related Messages                                 ; Off                        ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                       ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                       ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                        ; 100                    ;
+; Clock MUX Protection                                                            ; On                         ; On                     ;
+; Auto Gated Clock Conversion                                                     ; Off                        ; Off                    ;
+; Block Design Naming                                                             ; Auto                       ; Auto                   ;
+; SDC constraint protection                                                       ; Off                        ; Off                    ;
+; Synthesis Effort                                                                ; Auto                       ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                         ; On                     ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                        ; Off                    ;
+; Analysis & Synthesis Message Level                                              ; Medium                     ; Medium                 ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                       ; Auto                   ;
+; Resource Aware Inference For Block RAM                                          ; On                         ; On                     ;
+; Automatic Parallel Synthesis                                                    ; On                         ; On                     ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                        ; Off                    ;
++---------------------------------------------------------------------------------+----------------------------+------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path         ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; ../../Src/Lab_4_RAM.vhd                  ; yes             ; User VHDL File  ; C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_RAM.vhd                  ;         ;
+; ../../Src/Lab_4_Servo_Controller.vhd     ; yes             ; User VHDL File  ; C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd     ;         ;
+; ../../Src/Lab_4_Servo_Controller_Top.vhd ; yes             ; User VHDL File  ; C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd ;         ;
++------------------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 145            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 227            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 61             ;
+;     -- 5 input functions                    ; 21             ;
+;     -- 4 input functions                    ; 15             ;
+;     -- <=3 input functions                  ; 130            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 99             ;
+;                                             ;                ;
+; I/O pins                                    ; 51             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 99             ;
+; Total fan-out                               ; 1351           ;
+; Average fan-out                             ; 2.91           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name                ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+----------------------------+--------------+
+; |Lab_4_Servo_Controller_Top                  ; 227 (0)             ; 99 (3)                    ; 0                 ; 0          ; 51   ; 0            ; |Lab_4_Servo_Controller_Top                                         ; Lab_4_Servo_Controller_Top ; work         ;
+;    |Lab_4_Servo_Controller:Servo_Controller| ; 227 (227)           ; 96 (96)                   ; 0                 ; 0          ; 0    ; 0            ; |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller ; Lab_4_Servo_Controller     ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|current_state                              ;
++---------------------------+----------------------+--------------------------+----------------------+---------------------------+
+; Name                      ; current_state.Wait_2 ; current_state.Sweep_Left ; current_state.Wait_1 ; current_state.Sweep_Right ;
++---------------------------+----------------------+--------------------------+----------------------+---------------------------+
+; current_state.Sweep_Right ; 0                    ; 0                        ; 0                    ; 0                         ;
+; current_state.Wait_1      ; 0                    ; 0                        ; 1                    ; 1                         ;
+; current_state.Sweep_Left  ; 0                    ; 1                        ; 0                    ; 1                         ;
+; current_state.Wait_2      ; 1                    ; 0                        ; 0                    ; 1                         ;
++---------------------------+----------------------+--------------------------+----------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                             ;
++----------------------------------------------------+---------------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                               ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------------------------------+------------------------+
+; Lab_4_Servo_Controller:Servo_Controller|irq        ; Lab_4_Servo_Controller:Servo_Controller|Selector0 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                                                   ;                        ;
++----------------------------------------------------+---------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                      ;
++----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; Register name                                                                                ; Reason for Removal                                                                       ;
++----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][31]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][30]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][29]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][28]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][27]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][26]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][25]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][24]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][23]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][22]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][21]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][20]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][19]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][18]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][17]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][16]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][13]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][12]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][11]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][10]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][7]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][5]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][3]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][2]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][1]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][0]                  ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[0..3,5,7,10..13,16..31] ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][31]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][30]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][29]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][28]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][27]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][26]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][25]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][24]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][23]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][22]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][21]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][20]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][19]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][18]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][17]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][16]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][15]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][14]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][13]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][12]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][11]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][10]                 ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][9]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][8]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][7]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][6]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][5]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][4]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][3]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][2]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][1]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[1][0]                  ; Lost fanout                                                                              ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[0..3,5,7,10..13,16..31]    ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[0..4,6,8,11..14,17..30]    ; Merged with Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[31]        ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[5,7,9,10,15]               ; Merged with Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[16]        ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[1,2]                                    ; Merged with Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[0]                      ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[1,2]                                  ; Merged with Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[0]                    ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[4,6,8,9,15]                ; Merged with Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[14]        ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[4,6,8,9,15]             ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[14]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][15]                 ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][4]                  ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][6]                  ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][8]                  ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][9]                  ; Merged with Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[31]                        ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[16]                        ; Stuck at VCC due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[0]                                    ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[0]                                      ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14]                 ; Stuck at GND due to stuck port data_in                                                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[14]                     ; Stuck at VCC due to stuck port data_in                                                   ;
+; Total Number of Removed Registers = 165                                                      ;                                                                                          ;
++----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                          ;
++------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
+; Register name                                                                ; Reason for Removal        ; Registers Removed due to This Register                                    ;
++------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][31] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[31], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[31],    ;
+;                                                                              ;                           ; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[31],    ;
+;                                                                              ;                           ; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[0],                ;
+;                                                                              ;                           ; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[0]                   ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][16] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[16], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[16],    ;
+;                                                                              ;                           ; Lab_4_Servo_Controller:Servo_Controller|Current_Upper_Angle_Limit[16]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][30] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[30], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[30]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][29] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[29], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[29]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][28] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[28], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[28]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][27] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[27], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[27]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][26] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[26], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[26]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][25] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[25], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[25]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][24] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[24], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[24]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][23] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[23], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[23]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][22] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[22], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[22]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][21] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[21], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[21]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][20] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[20], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[20]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][19] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[19], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[19]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][18] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[18], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[18]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][17] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[17], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[17]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][13] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[13], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[13]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][12] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[12], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[12]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][11] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[11], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[11]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][10] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[10], ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[10]     ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][7]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[7],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[7]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][5]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[5],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[5]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][3]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[3],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[3]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][2]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[2],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[2]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][1]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[1],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[1]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][0]  ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[0],  ;
+;                                                                              ; due to stuck port data_in ; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[0]      ;
+; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] ; Stuck at GND              ; Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|data_out[14]  ;
+;                                                                              ; due to stuck port data_in ;                                                                           ;
++------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 99    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 46    ;
+; Number of registers using Asynchronous Clear ; 94    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 56    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                    ;
++-----------------------------------------------------------------------+---------+
+; Inverted Register                                                     ; Fan out ;
++-----------------------------------------------------------------------+---------+
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[9]               ; 6       ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[8]               ; 5       ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[6]               ; 6       ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[4]               ; 4       ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[14]              ; 6       ;
+; Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[15]              ; 7       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[16]            ; 6       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10]            ; 6       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[9]             ; 9       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[15]            ; 8       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[7]             ; 8       ;
+; Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[5]             ; 8       ;
+; Lab_4_Servo_Controller:Servo_Controller|Current_Lower_Angle_Limit[14] ; 5       ;
+; Total number of inverted registers = 13                               ;         ;
++-----------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 3:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[21]   ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[31] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|Up_Angle_Cnt[4]    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Lab_4_Servo_Controller_Top|Lab_4_Servo_Controller:Servo_Controller|Down_Angle_Cnt[10] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "Lab_4_Servo_Controller:Servo_Controller" ;
++-------------------+-------+----------+------------------------------+
+; Port              ; Type  ; Severity ; Details                      ;
++-------------------+-------+----------+------------------------------+
+; write             ; Input ; Info     ; Stuck at VCC                 ;
+; writedata[15..14] ; Input ; Info     ; Stuck at VCC                 ;
+; writedata[9..8]   ; Input ; Info     ; Stuck at VCC                 ;
+; writedata[31..16] ; Input ; Info     ; Stuck at GND                 ;
+; writedata[13..10] ; Input ; Info     ; Stuck at GND                 ;
+; writedata[3..0]   ; Input ; Info     ; Stuck at GND                 ;
+; writedata[7]      ; Input ; Info     ; Stuck at GND                 ;
+; writedata[6]      ; Input ; Info     ; Stuck at VCC                 ;
+; writedata[5]      ; Input ; Info     ; Stuck at GND                 ;
+; writedata[4]      ; Input ; Info     ; Stuck at VCC                 ;
+; address_bit       ; Input ; Info     ; Stuck at GND                 ;
++-------------------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 99                          ;
+;     CLR               ; 7                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 9                           ;
+;     ENA CLR SLD       ; 46                          ;
+;     plain             ; 4                           ;
+; arriav_io_obuf        ; 36                          ;
+; arriav_lcell_comb     ; 228                         ;
+;     arith             ; 90                          ;
+;         1 data inputs ; 90                          ;
+;     normal            ; 138                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 21                          ;
+;         6 data inputs ; 61                          ;
+; boundary_port         ; 51                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.30                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Mar 07 22:47:14 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_4_Servo_Controller -c Lab_4_Servo_Controller
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/apa/esd_1_spring_2020/labs/lab_4/src/lab_4_ram.vhd
+    Info (12022): Found design unit 1: Lab_4_RAM-beh File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_RAM.vhd Line: 33
+    Info (12023): Found entity 1: Lab_4_RAM File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_RAM.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file /users/apa/esd_1_spring_2020/labs/lab_4/src/lab_4_servo_controller.vhd
+    Info (12022): Found design unit 1: Lab_4_Servo_Controller-Behave File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 34
+    Info (12023): Found entity 1: Lab_4_Servo_Controller File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file /users/apa/esd_1_spring_2020/labs/lab_4/src/lab_4_servo_controller_top.vhd
+    Info (12022): Found design unit 1: Lab_4_Servo_Controller_Top-rtl File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 36
+    Info (12023): Found entity 1: Lab_4_Servo_Controller_Top File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 20
+Info (12127): Elaborating entity "Lab_4_Servo_Controller_Top" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at Lab_4_Servo_Controller_Top.vhd(43): used explicit default value for signal "Write_En" because signal was never assigned a value File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 43
+Warning (10540): VHDL Signal Declaration warning at Lab_4_Servo_Controller_Top.vhd(44): used explicit default value for signal "Address_0" because signal was never assigned a value File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 44
+Warning (10540): VHDL Signal Declaration warning at Lab_4_Servo_Controller_Top.vhd(45): used explicit default value for signal "Write_Data" because signal was never assigned a value File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 45
+Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at Lab_4_Servo_Controller_Top.vhd(29) File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+Info (12128): Elaborating entity "Lab_4_Servo_Controller" for hierarchy "Lab_4_Servo_Controller:Servo_Controller" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at Lab_4_Servo_Controller.vhd(165): signal "Angle_Limit_from_RAM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at Lab_4_Servo_Controller.vhd(172): signal "Current_Upper_Angle_Limit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at Lab_4_Servo_Controller.vhd(190): signal "Angle_Limit_from_RAM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at Lab_4_Servo_Controller.vhd(197): signal "Current_Lower_Angle_Limit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 197
+Warning (10631): VHDL Process Statement warning at Lab_4_Servo_Controller.vhd(156): inferring latch(es) for signal or variable "irq", which holds its previous value in one or more paths through the process File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 156
+Info (10041): Inferred latch for "irq" at Lab_4_Servo_Controller.vhd(156) File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 156
+Info (12128): Elaborating entity "Lab_4_RAM" for hierarchy "Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 68
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+Warning (13012): Latch Lab_4_Servo_Controller:Servo_Controller|irq has unsafe behavior File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Lab_4_Servo_Controller:Servo_Controller|current_state.Sweep_Left File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller.vhd Line: 63
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 32
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 29
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register Lab_4_Servo_Controller:Servo_Controller|Lab_4_RAM:Servo_Reg|Registers[0][14] will power up to High File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_RAM.vhd Line: 46
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 26
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 26
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Apa/ESD_1_Spring_2020/Labs/Lab_4/Src/Lab_4_Servo_Controller_Top.vhd Line: 26
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 230 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 4862 megabytes
+    Info: Processing ended: Sat Mar 07 22:47:35 2020
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:44
+
+
