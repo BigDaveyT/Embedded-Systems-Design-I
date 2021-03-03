@@ -1,0 +1,6 @@
+13:28:46 **** Clean-only build of configuration Nios II for project ConfigD_App ****
+make clean 
+[ConfigD_App clean complete]
+
+13:28:47 Build Finished (took 147ms)
+

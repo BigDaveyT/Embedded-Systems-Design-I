@@ -1,0 +1,41 @@
+14:37:57 **** Build of configuration Nios II for project Audio_Demo_App ****
+make all 
+Info: Building ../Audio_Demo_App_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Audio_Demo_App_bsp/
+[BSP build complete]
+Info: Linking Audio_Demo_App.elf
+nios2-elf-g++  -T'../Audio_Demo_App_bsp//linker.x' -msys-crt0='../Audio_Demo_App_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Audio_Demo_App_bsp/   -Wl,-Map=Audio_Demo_App.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Audio_Demo_App.elf  -lm -msys-lib=m
+../Audio_Demo_App_bsp/\libhal_bsp.a(alt_main.o): In function `alt_main':
+H:\Documents\School\6th_Year\ESD\Demos\8\Audio_Demo\Audio_Demo_quartus\software\Audio_Demo_App_bsp/HAL/src/alt_main.c:154: undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [Audio_Demo_App.elf] Error 1
+14:38:05 **** Incremental Build of configuration Nios II for project Audio_Demo_App ****
+make all 
+Info: Building ../Audio_Demo_App_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Audio_Demo_App_bsp/
+[BSP build complete]
+Info: Compiling audio_demo.c to obj/default/audio_demo.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Audio_Demo_App_bsp//HAL/inc -I../Audio_Demo_App_bsp/ -I../Audio_Demo_App_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/audio_demo.o audio_demo.c
+Info: Linking Audio_Demo_App.elf
+nios2-elf-g++  -T'../Audio_Demo_App_bsp//linker.x' -msys-crt0='../Audio_Demo_App_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Audio_Demo_App_bsp/   -Wl,-Map=Audio_Demo_App.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Audio_Demo_App.elf obj/default/audio_demo.o -lm -msys-lib=m
+nios2-elf-insert Audio_Demo_App.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 1 --sidp 0x4021060 --timestamp 1585592480 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "H:/Documents/School/6th_Year/ESD/Demos/8/Audio_Demo/Audio_Demo_quartus" --sopcinfo H:/Documents/School/6th_Year/ESD/Demos/8/Audio_Demo/Audio_Demo_quartus/software/Audio_Demo_App_bsp/../../nios_system.sopcinfo
+Info: (Audio_Demo_App.elf) 34 KBytes program size (code + initialized data).
+Info:                      22 KBytes free for stack + heap.
+Info: Creating Audio_Demo_App.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Audio_Demo_App.elf >Audio_Demo_App.objdump
+[Audio_Demo_App build complete]
+14:38:06 **** Incremental Build of configuration Nios II for project Audio_Demo_App_bsp ****
+make all 
+[BSP build complete]
+14:38:21 **** Build of configuration Nios II for project Audio_Demo_App ****
+make all 
+Info: Building ../Audio_Demo_App_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Audio_Demo_App_bsp/
+[BSP build complete]
+[Audio_Demo_App build complete]
+14:38:22 **** Incremental Build of configuration Nios II for project Audio_Demo_App ****
+make all 
+Info: Building ../Audio_Demo_App_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Audio_Demo_App_bsp/
+[BSP build complete]
+[Audio_Demo_App build complete]

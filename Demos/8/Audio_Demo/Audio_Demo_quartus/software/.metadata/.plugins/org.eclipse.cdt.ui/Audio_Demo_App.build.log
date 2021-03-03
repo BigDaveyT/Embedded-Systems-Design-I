@@ -1,0 +1,9 @@
+14:38:22 **** Incremental Build of configuration Nios II for project Audio_Demo_App ****
+make all 
+Info: Building ../Audio_Demo_App_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Audio_Demo_App_bsp/
+[BSP build complete]
+[Audio_Demo_App build complete]
+
+14:38:23 Build Finished (took 481ms)
+
